@@ -7,14 +7,14 @@
     <!-- Latest Articles-->
     <section class="section swiper-container swiper-slider swiper-slider-1 context-dark" data-loop="true" data-autoplay="5000" data-simulate-touch="false">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-bg="images/index-1-slider-1-1920x768.jpg">
+            <div class="swiper-slide" data-slide-bg="images/vocacion2.png">
                 <div class="swiper-slide-caption section-lg">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-9 col-lg-7 offset-md-1 offset-xxl-0">
-                                <h1><span class="d-block" data-caption-animate="fadeInUp" data-caption-delay="100">Professional Accounting</span><span class="d-block text-light" data-caption-animate="fadeInUp" data-caption-delay="200">& Tax Services</span></h1>
-                                <p class="lead" data-caption-animate="fadeInUp" data-caption-delay="350">Providing every client with the attention they deserve.</p>
-                                <div class="button-wrap-default" data-caption-animate="fadeInUp" data-caption-delay="450"><a class="button button-secondary-text" href="#">Read more</a></div>
+                                <h1><span class="d-block" data-caption-animate="fadeInUp" data-caption-delay="100">Descubre cual es tu Vocación</span><span class="d-block text-light" data-caption-animate="fadeInUp" data-caption-delay="200">& Potencial</span></h1>
+                                <p class="lead" data-caption-animate="fadeInUp" data-caption-delay="350">Encontrarás test que te ayudarán a orientar tu vocación</p>
+                                <div class="button-wrap-default" data-caption-animate="fadeInUp" data-caption-delay="450"><a class="button button-secondary-text" href="./vocacion.php">Más información</a></div>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,11 @@
                     <div class="section-lg section-lg-top-100">
                         <h2 class="title-icon title-icon-2"><span class="icon icon-default mercury-icon-touch"></span><span>Asesoría virtual <br><span class="text-light">con nosotros</span></span></h2>
                         <p class="big">Te ayudamos a orientar tu vocación, queremos ser parte de tu elección, tomando buenas decisiones para tu futuro.</p>
-                        <div class="group-sm group-wrap-2"><a class="button button-primary" href="https://wa.link/wxknwn">Orientate en Whatsapp</a><a class="button button-icon button-icon-right button-secondary" href="#"><span>Get Android app</span><span class="icon fa fa-android"></span></a></div>
+                        <div class="group-sm group-wrap-2">
+                            <a class="button button-primary" href="https://wa.link/wxknwn">Orientate en Whatsapp</a>
+                            <a class="button button-icon button-icon-right button-secondary" href="#"><span>Get Android app</span><span class="icon fa fa-android"></span></a>
+                            <a class="button button-google" href="./vocacion.php">Conoce tu Potencial</a>
+                        </div>
                     </div>
                 </div>
             </div>

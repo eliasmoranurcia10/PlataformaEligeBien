@@ -15,7 +15,7 @@
         <p>Loading...</p>
     </div>
 </div>
-<div class="page"><a class="banner banner-top" href="https://www.templatemonster.com/website-templates/monstroid2.html" target="_blank"><img src="images/monstroid.jpg" alt="" height="0"></a>
+<div class="page">
     <header class="section page-header rd-navbar-transparent-wrap">
         <!--RD Navbar-->
         <div class="rd-navbar-wrap">
@@ -41,13 +41,17 @@
                                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                 <!--RD Navbar Brand-->
                                 <div class="rd-navbar-brand">
-                                    <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-293x44.png" alt="" width="146" height="22" /><img class="brand-logo-light" src="images/logo-inverse-310x44.png" alt="" width="155" height="22" /></a>
+                                    <!--Brand-->
+                                    <a class="brand" href="./index.php">
+                                        <img class="brand-logo-dark" src="images/Elige_bien.png" alt=""  />
+                                        <img class="brand-logo-light" src="images/Elige_bien.png" alt="" />
+                                    </a>
                                 </div>
                             </div>
                             <div class="rd-navbar-main-element">
                                 <div class="rd-navbar-nav-wrap">
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Inicio</a>
+                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="#">Inicio</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Acerca de</a>
                                         </li>
