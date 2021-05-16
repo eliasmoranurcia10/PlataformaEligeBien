@@ -5,17 +5,17 @@
 <body>
     <?php include("./componentes/encabezado.php") ?>
     <!-- Latest Articles-->
-   
+
     <!-- Download Our Tax Guide App-->
-  
+
     <section class="parallax-container" data-parallax-img="images/parallax-1-1920x1026.jpg">
         <div class="parallax-content section-xl context-dark text-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-xl-9">
-                        <h2>Monthly <span class="text-light">Offer</span></h2>
-                        <div class="heading-5 font-weight-normal">Get our FREE financial consultation for your business taxes</div>
-                        <!--TimeCircles-->
+                        <h2>Financia tu carrera<span class="text-light">.</span></h2>
+                        <div class="heading-5 font-weight-normal">Múltiples oportunidades de financiamiento para que no dejes de estudiar.</div>
+                        <!--TimeCircles
                         <div class="countdown" data-countdown data-to="2019-12-31">
                             <div class="countdown-block countdown-block-days">
                                 <svg class="countdown-circle" x="0" y="0" width="200" height="200" viewbox="0 0 200 200" data-progress-days="">
@@ -57,7 +57,7 @@
                                     <div class="countdown-title">seconds</div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -75,20 +75,58 @@
             <div class="row">
                 <div id="becas" class="row"></div>
             </div>
-            <a href="./financiate.php" class="btn btn-success">Ver más</a>
+            <div class="group-sm group-wrap-2"><a class="button button-primary" href="https://wa.link/wxknwn">Orientate en Whatsapp</a></div>
+
         </div>
 
     </section>
     <!-- Latest Articles-->
+    <?php
+    $html = file_get_contents('https://www.ponteencarrera.pe/pec-portal-web/inicio/financiamiento'); //Convierte la información de la URL en cadena
+    $doc = new DOMDocument();
+    libxml_use_internal_errors(true);
+    $doc->loadHTML($html);
+    libxml_clear_errors();
+    $xpath = new DomXPath($doc);
+
+    $nodeList = $xpath->query("//div[@class='data-text data-carrera']");
+    $nodeList2 = $xpath->query("//div[@class='data-text']");
+    $metas    =     $doc->getElementsByTagName('a');
+   // $metas    =   $xpath->query("//div[@class='data-inscribirse  show-popup-seccion']");
+    //$node = $nodeList->item(0);
+    //$node2 = $nodeList2->item(0);
+    for ($i = 0; $i < $metas->length; $i++) {
+        $meta = $metas->item($i);
+        if ($meta->getAttribute('data-id-secdet')) {
+          //  echo $metas->length;
+           echo $meta->getAttribute('data-id-secdet')."<br>";
+        }
+        elseif($meta->getAttribute('href') && $meta->getAttribute('data-fin')){
+            echo $meta->getAttribute('href')."<br>";
+        }
+    }
+
+    for ($i = 0; $i < $nodeList2->length; $i++) {
+       // $node3 = $nodeList3->item($i);
+       
+        $node2 = $nodeList2->item($i);
+        $node = $nodeList->item($i);
+        //echo $node3->getAttribute('name');
+        echo $node2->nodeValue . "<br>";
+        echo $node->nodeValue . "<br>";
+    }
+
+    ?>
     <section class="section bg-default section-md">
         <div class="container">
             <h2 class="title-icon"><span class="icon icon-default mercury-icon-news"></span><span>Latest <span class="text-light">Articles</span></span></h2>
             <div class="box-image-small box-image-small-left">
-                <div class="item-image bg-image novi-nackground" style="background-image: url(images/index-1-2-586x334.jpg)"></div>
+                <iframe width='600' height='450' src='https://datosabiertos.pronabec.gob.pe/dataset/CambioDeEspecialidadBecario' frameborder='0' style='border:1px solid #E2E0E0;padding:0;margin:0;'></iframe>
                 <div class="item-body wow fadeInRight">
-                    <p>July 12, 2019</p>
-                    <h4><a href="#">Saving Money When Paying Taxes</a></h4>
-                    <p class="big">If you’re like a majority of Americans, you may be looking for new, creative ways to ease your annual tax burden. Fortunately, there are several things you can do to cut your taxes or increase...</p>
+                    <p><?php
+                        date_default_timezone_set("America/Lima");
+                        echo date("D d M Y H:i:s") ?></p>
+                    <h4><a href="#">Becarios Cambio de Especialidad</a></h4>
                 </div>
             </div>
             <div class="box-image-small box-image-small-right">
@@ -102,7 +140,7 @@
         </div>
     </section><a class="banner" href="https://www.templatemonster.com/website-templates/monstroid2.html" target="_blank"><img src="images/monstroid-big.jpg" alt="" height="0"></a>
 
-    <?php include("./componentes/footer.php")?>
+    <?php include("./componentes/footer.php") ?>
     </div>
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
