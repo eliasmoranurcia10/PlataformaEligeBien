@@ -80,43 +80,64 @@
         </div>
 
     </section>
-    <!-- Latest Articles-->
-    <?php
-    $html = file_get_contents('https://www.ponteencarrera.pe/pec-portal-web/inicio/financiamiento'); //Convierte la información de la URL en cadena
-    $doc = new DOMDocument();
-    libxml_use_internal_errors(true);
-    $doc->loadHTML($html);
-    libxml_clear_errors();
-    $xpath = new DomXPath($doc);
+    <section class="section bg-default section-md">
 
-    $nodeList = $xpath->query("//div[@class='data-text data-carrera']");
-    $nodeList2 = $xpath->query("//div[@class='data-text']");
-    $metas    =     $doc->getElementsByTagName('a');
-   // $metas    =   $xpath->query("//div[@class='data-inscribirse  show-popup-seccion']");
-    //$node = $nodeList->item(0);
-    //$node2 = $nodeList2->item(0);
-    for ($i = 0; $i < $metas->length; $i++) {
-        $meta = $metas->item($i);
-        if ($meta->getAttribute('data-id-secdet')) {
-          //  echo $metas->length;
-           echo $meta->getAttribute('data-id-secdet')."<br>";
-        }
-        elseif($meta->getAttribute('href') && $meta->getAttribute('data-fin')){
-            echo $meta->getAttribute('href')."<br>";
-        }
-    }
+        <div class="container">
+            <h2 class="title-icon"><span class="icon icon-default mercury-icon-news"></span><span>Becas <span class="text-light">y </span><span>Créditos</span></span></h2>
+            <span>
+                Conoce un poco más sobre las becas, créditos y otras oportunidades de financiamiento a las que puedes acceder para estudiar una carrera</span>
+            <br>
+           <h3> <span>Becas: </span><br></h3>
+            <span class="text-light">Ayuda económica que se le entrega a una persona para pagar total o parcialmente los gastos que genera, por ejemplo,
+                seguir una carrera de educación superior.</span>
+                <h3> <span> Crédito educativo:  </span><br></h3> <span class="text-light"> préstamo personal ofrecido a estudiantes y profesionales que buscan financiar sus estudios de pre y posgrado.</span>
+                <h3> <span> Tasa de interés: </span><br></h3><span class="text-light">adicional que se debe pagar en función del préstamo otorgado.</span> 
+            <div class="row">
+                <!-- Latest Articles-->
+                <?php
+                $html = file_get_contents('https://www.ponteencarrera.pe/pec-portal-web/inicio/financiamiento'); //Convierte la información de la URL en cadena
+                $doc = new DOMDocument();
+                libxml_use_internal_errors(true);
+                $doc->loadHTML($html);
+                libxml_clear_errors();
+                $xpath = new DomXPath($doc);
 
-    for ($i = 0; $i < $nodeList2->length; $i++) {
-       // $node3 = $nodeList3->item($i);
+                $nodeList = $xpath->query("//div[@class='data-text data-carrera']");
+                $nodeList2 = $xpath->query("//div[@class='data-text']");
+                $metas    =     $doc->getElementsByTagName('a');
+                // $metas    =   $xpath->query("//div[@class='data-inscribirse  show-popup-seccion']");
+                //$node = $nodeList->item(0);
+                //$node2 = $nodeList2->item(0);
+                for ($i = 0; $i < $metas->length; $i++) {
+                    $meta = $metas->item($i);
+                    if ($meta->getAttribute('data-id-secdet')) {
+                        //  echo $metas->length;
+                        //  echo $meta->getAttribute('data-id-secdet') . "<br>";
+                    } elseif ($meta->getAttribute('href') && $meta->getAttribute('data-fin')) {
+                        // echo $meta->getAttribute('href') . "<br>";
+                    }
+                }
+
+                for ($i = 0; $i < $nodeList2->length; $i++) {
+                    // $node3 = $nodeList3->item($i);
+
+                    $node2 = $nodeList2->item($i);
+                    $node = $nodeList->item($i);
+                    //echo $node3->getAttribute('name')  <img src="..." class="card-img-top" alt="...">;
+                    echo '<div class="col col-md-3 col-xs-12" style="width: 18rem;">
        
-        $node2 = $nodeList2->item($i);
-        $node = $nodeList->item($i);
-        //echo $node3->getAttribute('name');
-        echo $node2->nodeValue . "<br>";
-        echo $node->nodeValue . "<br>";
-    }
+        <div class="card-body bg-success">
+          <h5 class="card-title ">' . $node2->nodeValue . '</h5>
+          <p class="card-text">' . $node->nodeValue . '</p>
+          <a href="#" class="btn btn-primary">Ir a</a>
+        </div>
+      </div>';
+                }
 
-    ?>
+                ?>
+            </div>
+        </div>
+    </section>
     <section class="section bg-default section-md">
         <div class="container">
             <h2 class="title-icon"><span class="icon icon-default mercury-icon-news"></span><span>Latest <span class="text-light">Articles</span></span></h2>
