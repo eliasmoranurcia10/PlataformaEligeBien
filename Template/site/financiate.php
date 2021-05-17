@@ -105,18 +105,29 @@
                 $nodeList = $xpath->query("//div[@class='data-text data-carrera']");
                 $nodeList2 = $xpath->query("//div[@class='data-text']");
                 $metas    =     $doc->getElementsByTagName('a');
+                $datos = array();
+                $valor="";
                 // $metas    =   $xpath->query("//div[@class='data-inscribirse  show-popup-seccion']");
                 //$node = $nodeList->item(0);
                 //$node2 = $nodeList2->item(0);
                 for ($i = 0; $i < $metas->length; $i++) {
                     $meta = $metas->item($i);
+                  
                     if ($meta->getAttribute('data-id-secdet')) {
                         //  echo $metas->length;
-                        //  echo $meta->getAttribute('data-id-secdet') . "<br>";
+                        //  echo . "<br>";
+                        $valor=$meta->getAttribute('data-id-secdet') ;
+                        array_push($datos,$valor);
                     } elseif ($meta->getAttribute('href') && $meta->getAttribute('data-fin')) {
                         // echo $meta->getAttribute('href') . "<br>";
+                        $valor=$meta->getAttribute('href');
+                        array_push($datos,$valor);
+
                     }
+                  
+                    
                 }
+         //       print_r($datos);
 
                 for ($i = 0; $i < $nodeList2->length; $i++) {
                     // $node3 = $nodeList3->item($i);
@@ -129,9 +140,14 @@
         <div class="card-body bg-success">
           <h5 class="card-title ">' . $node2->nodeValue . '</h5>
           <p class="card-text">' . $node->nodeValue . '</p>
-          <a href="#" class="btn btn-primary">Ir a</a>
-        </div>
-      </div>';
+          ';
+          if(isset($datos[$i])){
+            echo '<a href="'.$datos[$i].'" target="_blank" class="btn btn-primary">Ir a</a>';
+           
+          }
+          echo ' </div>
+          </div>';
+        
                 }
 
                 ?>
