@@ -3,14 +3,14 @@
                 <div class="container">
                     <div class="row row-40">
                         <div class="col-md-5 col-lg-3">
-                            <h5>Our Contacts</h5>
+                            <h5>Nuestros contactos</h5>
                             <ul class="contact-list font-weight-bold">
                                 <li>
                                     <div class="unit unit-spacing-xs">
                                         <div class="unit-left">
                                             <div class="icon icon-sm icon-primary novi-icon mdi mdi-map-marker"></div>
                                         </div>
-                                        <div class="unit-body"><a href="#">14973 Interurban Ave <br>New York, NY 98168</a></div>
+                                        <div class="unit-body"><a href="#">14973 Interurban Ave <br>ChiclaYork</a></div>
                                     </div>
                                 </li>
                                 <li>
@@ -18,7 +18,7 @@
                                         <div class="unit-left">
                                             <div class="icon icon-sm icon-primary novi-icon mdi mdi-phone"></div>
                                         </div>
-                                        <div class="unit-body"><a href="tel:#">+1 (800) 123 1234</a></div>
+                                        <div class="unit-body"><a href="tel:#">+51 936 193 965</a></div>
                                     </div>
                                 </li>
                                 <li>
@@ -28,37 +28,37 @@
                                         </div>
                                         <div class="unit-body">
                                             <ul class="list-0">
-                                                <li>Weekdays: 8:00–17:00</li>
-                                                <li>Weekends: Closed</li>
+                                                <li>Lun - Vie: 8:00 – 17:00</li>
+                                                <li>Domingos: Cerrado</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </li>
-                            </ul><a class="d-inline-block big" href="mailto:#">mail@demolink.org</a>
+                            </ul><a class="d-inline-block big" href="mailto:#">contacto@eligebien.com</a>
                         </div>
                         <div class="col-md-6 col-lg-5">
                             <h5>Links</h5>
                             <div class="row row-5 justify-content-between">
                                 <div class="col-sm-6">
                                     <ul class="footer-list big">
-                                        <li><a href="#">IRS Publications</a></li>
-                                        <li><a href="#">Record Retention Guide</a></li>
-                                        <li><a href="#">Tax Due Dates</a></li>
-                                        <li><a href="#">Tax Forms</a></li>
-                                        <li><a href="#">Tax Rates</a></li>
-                                        <li><a href="#">Where is my refund?</a></li>
-                                        <li><a href="#">Retirement</a></li>
+                                        <li><a href="#">Inicio</a></li>
+                                        <li><a href="#">Universidades</a></li>
+                                        <li><a href="#">Programas </a></li>
+                                        <li><a href="#">Orientate</a></li>
+                                        <li><a href="#">Nosotros</a></li>
+                                        <li><a href="#">Financiate</a></li>
+                                        <li><a href="#">Contáctanos</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4 col-lg-6 col-xxl-5">
                                     <ul class="footer-list big">
-                                        <li><a href="#">Retirement</a></li>
+                                     <!--   <li><a href="#">Retirement</a></li>
                                         <li><a href="#">Investment</a></li>
                                         <li><a href="#">Real Estate</a></li>
                                         <li><a href="#">Insurance</a></li>
                                         <li><a href="#">Tax</a></li>
                                         <li><a href="#">Money</a></li>
-                                        <li><a href="#">Other Resources</a></li>
+                                        <li><a href="#">Other Resources</a></li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
             </div>
             <div class="footer-inner-2">
                 <div class="container">
-                    <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
+                    <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. Todos los derechos reservados de  <a href="https://www.templatemonster.com">EligeBien</a></p>
                 </div>
             </div>
         </footer>

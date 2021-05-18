@@ -51,11 +51,19 @@
                             <div class="rd-navbar-main-element">
                                 <div class="rd-navbar-nav-wrap">
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="#">Inicio</a>
+                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="./index.php">Inicio</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Acerca de</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Universidades</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Programas</a>
+                                        </li>
+                                      <!--  <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Orientate</a>
+                                        </li> -->
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="vocacion.php">Orientate</a>
+                                        </li>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Nosotros</a>
+                                        </li>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="financiate.php">Financiate :)</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contáctanos</a>
                                         </li>

@@ -75,7 +75,7 @@
             <div class="row">
                 <div id="becas" class="row"></div>
             </div>
-            <div class="group-sm group-wrap-2"><a class="button button-primary" href="https://wa.link/wxknwn">Orientate en Whatsapp</a></div>
+            <div class="group-sm group-wrap-2"><a class="button button-primary" target="_blank" href="https://wa.link/wxknwn">Orientate en Whatsapp</a></div>
 
         </div>
 
@@ -87,11 +87,22 @@
             <span>
                 Conoce un poco más sobre las becas, créditos y otras oportunidades de financiamiento a las que puedes acceder para estudiar una carrera</span>
             <br>
-           <h3> <span>Becas: </span><br></h3>
-            <span class="text-light">Ayuda económica que se le entrega a una persona para pagar total o parcialmente los gastos que genera, por ejemplo,
-                seguir una carrera de educación superior.</span>
-                <h3> <span> Crédito educativo:  </span><br></h3> <span class="text-light"> préstamo personal ofrecido a estudiantes y profesionales que buscan financiar sus estudios de pre y posgrado.</span>
-                <h3> <span> Tasa de interés: </span><br></h3><span class="text-light">adicional que se debe pagar en función del préstamo otorgado.</span> 
+            <div class="row">
+                <div class="col col-xs-12 col-md-4">
+                    <h3> <span>Becas: </span><br></h3>
+                    <span class="text-light">Ayuda económica que se le entrega a una persona para pagar total o parcialmente los gastos que genera, por ejemplo,
+                        seguir una carrera de educación superior.</span>
+
+                </div>
+                <div class="col col-xs-12 col-md-4">
+                    <h3> <span> Crédito educativo: </span><br></h3> <span class="text-light"> préstamo personal ofrecido a estudiantes y profesionales que buscan financiar sus estudios de pre y posgrado.</span>
+
+                </div>
+                <div class="col col-xs-12 col-md-4">
+                    <h3> <span> Tasa de interés: </span><br></h3><span class="text-light">adicional que se debe pagar en función del préstamo otorgado.</span>
+
+                </div>
+            </div>
             <div class="row">
                 <!-- Latest Articles-->
                 <?php
@@ -106,28 +117,25 @@
                 $nodeList2 = $xpath->query("//div[@class='data-text']");
                 $metas    =     $doc->getElementsByTagName('a');
                 $datos = array();
-                $valor="";
+                $valor = "";
                 // $metas    =   $xpath->query("//div[@class='data-inscribirse  show-popup-seccion']");
                 //$node = $nodeList->item(0);
                 //$node2 = $nodeList2->item(0);
                 for ($i = 0; $i < $metas->length; $i++) {
                     $meta = $metas->item($i);
-                  
+
                     if ($meta->getAttribute('data-id-secdet')) {
                         //  echo $metas->length;
                         //  echo . "<br>";
-                        $valor=$meta->getAttribute('data-id-secdet') ;
-                        array_push($datos,$valor);
+                        $valor = $meta->getAttribute('data-id-secdet');
+                        array_push($datos, $valor);
                     } elseif ($meta->getAttribute('href') && $meta->getAttribute('data-fin')) {
                         // echo $meta->getAttribute('href') . "<br>";
-                        $valor=$meta->getAttribute('href');
-                        array_push($datos,$valor);
-
+                        $valor = $meta->getAttribute('href');
+                        array_push($datos, $valor);
                     }
-                  
-                    
                 }
-         //       print_r($datos);
+                //       print_r($datos);
 
                 for ($i = 0; $i < $nodeList2->length; $i++) {
                     // $node3 = $nodeList3->item($i);
@@ -141,13 +149,15 @@
           <h5 class="card-title ">' . $node2->nodeValue . '</h5>
           <p class="card-text">' . $node->nodeValue . '</p>
           ';
-          if(isset($datos[$i])){
-            echo '<a href="'.$datos[$i].'" target="_blank" class="btn btn-primary">Ir a</a>';
-           
-          }
-          echo ' </div>
+                    if (isset($datos[$i])) {
+                        if (is_numeric($datos[$i])) {
+                            echo '<a href="' . $datos[$i] . '" target="_blank" class="btn btn-primary">Ir a</a>';
+                        } else {
+                            echo 'Será un modal <a href="' . $datos[$i] . '"target="_blank" class="btn btn-primary">Ir a</a>';
+                        }
+                    }
+                    echo ' </div>
           </div>';
-        
                 }
 
                 ?>
@@ -156,7 +166,7 @@
     </section>
     <section class="section bg-default section-md">
         <div class="container">
-            <h2 class="title-icon"><span class="icon icon-default mercury-icon-news"></span><span>Latest <span class="text-light">Articles</span></span></h2>
+            <h2 class="title-icon"><span class="icon icon-default mercury-icon-news"></span><span>Últimas <span class="text-light">Noticias</span></span></h2>
             <div class="box-image-small box-image-small-left">
                 <iframe width='600' height='450' src='https://datosabiertos.pronabec.gob.pe/dataset/CambioDeEspecialidadBecario' frameborder='0' style='border:1px solid #E2E0E0;padding:0;margin:0;'></iframe>
                 <div class="item-body wow fadeInRight">
@@ -193,15 +203,16 @@
                 console.log(data);
                 var count = Object.keys(data).length;
                 var newhtml;
+                
                 for (var i = 0; i < count; i++) {
 
 
-                    html = '<div class="card col col-xs-12 col-md-3" style="width: 18rem;">';
-                    html += '<div class="card-body >';
-                    html += '<h5 class="card-title ">' + data[i].Convocatoria + '</h5>';
-                    html += '<p class="card-text">Becas ofertadas: ' + data[i].Becas_ofertadas + '</p>';
-                    html += '<p class="card-text">Modalidad : ' + data[i].ModalidadDescripcion + '</p>';
-                    html += '<p class="card-text"><a target="_blank" href="https://www.pronabec.gob.pe/beca-18-2021/">Ver en Pronabec</a></p>';
+                    html = '<div class="col col-xs-12 col-md-3" style="width: 18rem;">';
+                    html += '<div class="card-body">';
+                    html += '<h5 class="card-title"><span style="font-color: green !important;" >' + data[i].Convocatoria + '</span></h5>';
+                    html += '<p class="card-text"><h6>Becas ofertadas: </h6>' + data[i].Becas_ofertadas + '</p>';
+                    html += '<p class="card-text"><h6>Modalidad :</h6> ' + data[i].ModalidadDescripcion + '</p>';
+                    html += '<p class="card-text"><a class="btn btn-success" target="_blank" href="https://www.pronabec.gob.pe/beca-18-2021/">Ver en Pronabec</a></p>';
 
                     html += '</div>';
                     html += '</div>';
